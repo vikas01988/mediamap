@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  color: #f8fafc;
+  background: #0f172a;
+  font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(
+      circle at 85% -10%,
+      rgba(225, 29, 72, 0.24),
+      transparent 35%
+    ),
+    linear-gradient(115deg, #0f172a 0%, #101827 55%, #172033 100%);
+  background-attachment: fixed;
+}
+button,
+input {
+  font: inherit;
+}
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+  .pill {
+    @apply rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300;
+  }
+  .panel {
+    @apply rounded-2xl border border-white/10 bg-white/[.06] shadow-2xl shadow-black/10;
+  }
+  .font-display {
+    font-family: "Space Grotesk", "DM Sans", sans-serif;
+  }
+}
+.movie-card-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: inherit;
+}
+.hero-stage {
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.32);
+}
